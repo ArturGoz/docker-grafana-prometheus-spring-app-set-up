@@ -2,7 +2,7 @@
 
 ## Prometheus config file 
 
-Configure you Prometheus separately 
+Configure your Prometheus separately 
 Path : src/main/resources/prometheus.yml
 
 ## instructions 
