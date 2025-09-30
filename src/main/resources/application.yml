@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: IS-lab1
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  profiles:
+    active: docker
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
+---
+
+# Профіль local
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/isdb
+    username: root
+    password: Artur.14022005
+
+---
+
+# Профіль docker
+spring:
+  config:
+    activate:
+      on-profile: docker
+  datasource:
+    url: jdbc:mysql://mysql-container:3306/isdb
+    username: root
+    password: Artur.14022005
